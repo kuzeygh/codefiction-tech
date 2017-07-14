@@ -44,10 +44,6 @@ describe('PodcastsSectionComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  describe('compiled template', () => {
-
-  });
-
   describe('controller', () => {
     describe('onInit', () => {
       it('should load podcasts', () => {
@@ -69,7 +65,9 @@ describe('PodcastsSectionComponent', () => {
         // Arrange
         spyOn(podcastService, 'getPodcasts')
           .and.returnValue(Observable.of(mockPodcasts));
+
         component.ngOnInit();
+
         spyOn(component.podcastFeedSubscription, 'unsubscribe');
 
         // Act

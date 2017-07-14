@@ -11,7 +11,7 @@ import {
   PodcastsSectionComponent
 } from './components';
 
-import { PodcastService } from './services'
+import { PodcastService } from './services';
 
 @NgModule({
   declarations: [

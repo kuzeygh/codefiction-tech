@@ -70,13 +70,12 @@ describe('PodcastService', () => {
 
     it('should throw error when response body is falsy', async((): void => {
       // Arrange
-      mockBackend.connections
-        .subscribe((connection: MockConnection) => {
-          const responseOpts: ResponseOptions = new ResponseOptions({
-            body: JSON.stringify(null)
-          });
-          connection.mockRespond(new Response(responseOpts));
+      mockBackend.connections.subscribe((connection: MockConnection) => {
+        const responseOpts: ResponseOptions = new ResponseOptions({
+          body: JSON.stringify(null)
         });
+        connection.mockRespond(new Response(responseOpts));
+      });
 
       // Act + Assert
       expect(service.getPodcasts.bind('url-to-podcast-feed')).toThrow();
